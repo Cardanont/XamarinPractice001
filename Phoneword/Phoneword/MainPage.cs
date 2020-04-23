@@ -27,7 +27,8 @@ namespace Phoneword
             panel.Children.Add(new Label
             {
                 Text = "Enter a Phoneword",
-                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label))
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
+                HorizontalTextAlignment = TextAlignment.Center
             });
 
             panel.Children.Add(phoneNumberText = new Entry
@@ -48,6 +49,7 @@ namespace Phoneword
 
             translateButton.Clicked += Ontranslate;
             callButton.Clicked += OnCall;
+            this.BackgroundColor = Color.FromHex("#025951");
             this.Content = panel;
         }
 

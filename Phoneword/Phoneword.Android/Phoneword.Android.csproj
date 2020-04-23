@@ -86,13 +86,16 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\drawable\" />
+    <AndroidResource Include="Resources\drawable\spartan.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Phoneword\Phoneword.csproj">
       <Project>{FA1B9374-58C0-47B6-9E47-F0280252DF0A}</Project>
       <Name>Phoneword</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\CSCar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
