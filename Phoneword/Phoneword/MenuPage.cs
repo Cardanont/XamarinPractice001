@@ -12,8 +12,6 @@ namespace Phoneword
         Button biblicalQButton;
         Button phoneTButton;
 
-        string translatedNumber;
-
 
         public MenuPage()
         {
@@ -48,7 +46,7 @@ namespace Phoneword
                 TextColor = Color.FromHex("#000000")
             });
 
-            //biblicalQButton.Clicked += Ontranslate;
+            biblicalQButton.Clicked += GotoBiblicalQPage;
             phoneTButton.Clicked += GoToMain;
             this.BackgroundColor = Color.FromHex("#025951");
             this.Content = panel;
@@ -56,6 +54,10 @@ namespace Phoneword
         public void GoToMain(object sender, EventArgs e)
         {
             Application.Current.MainPage = new NavigationPage(new MainPage());
+        }
+        public void GotoBiblicalQPage(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new NavigationPage(new BiblicalQuestionsPage());
         }
     }
 }

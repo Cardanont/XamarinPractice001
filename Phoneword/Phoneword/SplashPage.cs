@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace Phoneword
 {
@@ -16,7 +13,7 @@ namespace Phoneword
             var sub = new AbsoluteLayout();
             splashImage = new Image
             {
-                Source = "CSCar.png",
+                Source = "bible.png",
                 WidthRequest = 100,
                 HeightRequest = 100
             };
