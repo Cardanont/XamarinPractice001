@@ -4,21 +4,15 @@ using System.Text;
 
 namespace Phoneword
 {
-    public class BiblicalQLogic
+    public static class BiblicalQLogic
     {
 
-        public string Question1(string answer)
+        public static string Question1(string answer)
         {
-            switch (answer)
-            {
-                case "1":
-                    return "not true";
+            if (answer == "10")
+                return "That's true!";
 
-                default:
-                    break;
-            }
-
-            return null;
+            return "That's wrong try again :)";
         }
 
     }

@@ -8,12 +8,11 @@ namespace Phoneword
     class BiblicalQuestionsPage : ContentPage
     {
 
-        Button ans1Button;
-        Button ans2Button;
-        Button ans3Button;
-        Button ans4Button;
-        Button ans5Button;
-
+        Button ansButton0;
+        Button ansButton1;
+        Button ansButton2;
+        Button ansButton3;
+        Button ansButton4;
 
         public BiblicalQuestionsPage()
         {
@@ -38,40 +37,60 @@ namespace Phoneword
                 HorizontalTextAlignment = TextAlignment.Center
             });
 
-            panel.Children.Add(ans1Button = new Button
+            panel.Children.Add(ansButton0 = new Button
             {
                 Text = "2",
-                BackgroundColor = Color.FromHex("#8C644D")
+                BackgroundColor = Color.FromHex("#8C644D"),
             });
 
-            panel.Children.Add(ans2Button = new Button
+            panel.Children.Add(ansButton1 = new Button
             {
                 Text = "12",
                 BackgroundColor = Color.FromHex("#8C644D")
             });
 
-            panel.Children.Add(ans3Button = new Button
+            panel.Children.Add(ansButton2 = new Button
             {
                 Text = "5",
                 BackgroundColor = Color.FromHex("#8C644D")
             });
 
-            panel.Children.Add(ans4Button = new Button
-            {
-                Text = "10",
-                BackgroundColor = Color.FromHex("#8C644D")
-            });
-
-            panel.Children.Add(ans5Button = new Button
+            panel.Children.Add(ansButton3 = new Button
             {
                 Text = "7",
                 BackgroundColor = Color.FromHex("#8C644D")
             });
 
+            panel.Children.Add(ansButton4 = new Button
+            {
+                Text = "10",
+                BackgroundColor = Color.FromHex("#8C644D")
+            });
 
 
+            ansButton0.Clicked += WAnswer;
+            ansButton1.Clicked += WAnswer;
+            ansButton2.Clicked += WAnswer;
+            ansButton3.Clicked += WAnswer;
+            ansButton4.Clicked += CAnswer;
             this.BackgroundColor = Color.FromHex("#40281A");
             this.Content = panel;
+        }
+
+        async void CAnswer(object sender, EventArgs e)
+        {
+            await this.DisplayAlert(
+                    "Answer for question 1: ",
+                    "That's correct!",
+                    "Ok");
+        }
+
+        async void WAnswer(object sender, EventArgs e)
+        {
+            await this.DisplayAlert(
+                    "Answer for question 1: ",
+                    "That's incorrect try again.",
+                    "Ok");
         }
     }
 }
