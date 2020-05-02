@@ -68,29 +68,31 @@ namespace Phoneword
             });
 
 
-            ansButton0.Clicked += WAnswer;
-            ansButton1.Clicked += WAnswer;
-            ansButton2.Clicked += WAnswer;
-            ansButton3.Clicked += WAnswer;
-            ansButton4.Clicked += CAnswer;
+            ansButton0.Clicked += Answer;
+            ansButton1.Clicked += Answer;
+            ansButton2.Clicked += Answer;
+            ansButton3.Clicked += Answer;
+            ansButton4.Clicked += Answer;
             this.BackgroundColor = Color.FromHex("#40281A");
             this.Content = panel;
         }
 
-        async void CAnswer(object sender, EventArgs e)
+        async void Answer(object sender, EventArgs e)
         {
-            await this.DisplayAlert(
+            if (ansButton0.Text == "10")
+            {
+                await this.DisplayAlert(
                     "Answer for question 1: ",
                     "That's correct!",
                     "Ok");
-        }
-
-        async void WAnswer(object sender, EventArgs e)
-        {
-            await this.DisplayAlert(
+            }
+            else
+            {
+                await this.DisplayAlert(
                     "Answer for question 1: ",
                     "That's incorrect try again.",
                     "Ok");
+            }
         }
     }
 }
